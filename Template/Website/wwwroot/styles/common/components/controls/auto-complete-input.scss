@@ -1,0 +1,18 @@
+///<reference path="../../utilities/utilities">
+.typeahead__container {
+    font-family: IranSans;
+    font-size: 1.4rem;
+
+    .typehead-chevron-down {
+        i:first-child {
+            position: absolute;
+            top: .9rem;
+            left: .7rem;
+            opacity: .7;
+        }
+
+        input {
+            padding: .375rem 2rem .375rem 2.5rem;
+        }
+    }
+}

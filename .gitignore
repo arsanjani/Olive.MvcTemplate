@@ -1,0 +1,16 @@
+obj
+Template/Website/wwwroot/lib
+MSharp.exe
+bin
+Template/M#/lib/*
+!Template/M#/lib/netcoreapp2.1/
+Template/M#/lib/netcoreapp2.1/*
+!Template/M#/lib/netcoreapp2.1/MSharp.DSL.runtimeconfig.json
+.vs
+Template/Website/wwwroot/styles/*css
+Template/Website/@Temp.File.Uploads/
+Template/Website/package-lock.json
+/Template/Website.zip
+*.map
+Template/DB/Tables
+Template/Website/yarn.lock

@@ -1,0 +1,150 @@
+///<reference path="../../common/utilities/utilities">
+
+@mixin left-border($color: $on-color-primary) {
+    border-left: .3rem solid $color;
+}
+
+.sidebar-wrapper {
+    height: 100%;
+    box-shadow: 0 0 15px 0px #000;
+    clip-path: inset(0px -15px 0px -15px);
+
+    .sidebar-menu {
+        .nav {
+            position: fixed;
+            width: 22rem;
+
+            .welcome {
+                position: fixed;
+                bottom: 15rem;
+                padding: 1rem;
+                width: $sidebar-width;
+
+                .div-left {
+                    width: 50%;
+                    position: absolute;
+                    left: 10px;
+                    top: 0;
+                }
+
+                .div-right {
+                    width: 50%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    .btn {
+                        position: absolute;
+                        right: 5px;
+                        margin-top: 5px;
+                    }
+                }
+
+                .span-welcome {
+                    color: $p-dark-gray
+                }
+
+                .span-user {
+                    font-weight: 700;
+                    color: $color-primary;
+                }
+            }
+
+            li {
+
+                a {
+                    display: block;
+                    padding: 1rem 2rem;
+                    color: $black-primary;
+                    font-size: $default-font-size;
+                    @include regular-font;
+                    @include left-border;
+                    border-bottom: 0.1rem solid $border-color;
+
+                    &:hover, &:focus, &:active {
+                        background-color: $color-primary-lighten;
+                        text-decoration: none;
+                    }
+                }
+
+                &.has-submenu {
+                    ul {
+                        list-style: none;
+                        user-select: none;
+                        cursor: pointer;
+                        background-color: $gray-background;
+                        padding: 0;
+
+                        ul li a {
+                            padding-left: 4rem;
+                        }
+                    }
+                    /// add arrows to submenu parrent
+                    > a {
+                        &:after {
+                            content: "\f0da";
+                            font-family: 'IranSans';
+                            padding: 0 0.5rem;
+                            font-size: 1.5rem;
+                            float: right;
+                            color: $black-primary;
+                        }
+
+                        &[aria-expanded=true] {
+                            &:after {
+                                content: "\f0d7";
+                                color: $color-primary;
+                            }
+                        }
+
+                        &[aria-expanded=true] {
+                            ::after {
+                                content: "\f0d8";
+                                font-family: 'IranSans';
+                                padding: 0 0.5rem;
+                                font-size: 1.5rem;
+                                float: right;
+                            }
+                        }
+                    }
+
+                    a {
+                        @include left-border($gray-background);
+                    }
+                }
+
+                &.active-parent {
+                    > a {
+                        color: $color-primary;
+                    }
+                }
+
+                &.active {
+                    a {
+                        border-right: .3rem solid $color-primary;
+                        background-color: $color-primary-lighten;
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        .buttons-row {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+
+            .buttons {
+                button, a {
+                    color: $black-primary;
+                    display: block;
+                    font-size: 1.4rem;
+                    font-weight: 500; //@BB change to $semi-bold
+                    &:hover, &:focus, &:active {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

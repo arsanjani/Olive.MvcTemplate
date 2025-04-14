@@ -1,6 +1,5 @@
 namespace Website
 {
-    using AutoMapper;
     using BotDetect.Web;
     using Domain;
     using Hangfire;
@@ -71,7 +70,8 @@ namespace Website
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
                 StatsPollingInterval = (int)5.Minutes().TotalMilliseconds,
-                Authorization = [new MyAuthorizationFilter()]
+                //Authorization = [new MyAuthorizationFilter()] // .Net 8.0 or later
+                Authorization = new[] { new MyAuthorizationFilter() }
             });
 
 

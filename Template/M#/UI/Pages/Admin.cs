@@ -5,7 +5,7 @@ public class AdminPage : RootPage
 {
     public AdminPage()
     {
-        Roles(AppRole.Admin, AppRole.Collector, AppRole.Deliveryman);
+        Roles(AppRole.Admin);
 
         Set(PageSettings.LeftMenu, "AdminSettingsMenu");
 

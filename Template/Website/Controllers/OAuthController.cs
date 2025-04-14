@@ -28,7 +28,7 @@ namespace Controllers
                 return await ShowError(issuer, "not-registered", email);
             }
 
-            if (user.IsDeactivated)
+            if (user.IsActive)
             {
                 return await ShowError(issuer, "deactivated", email);
             }
